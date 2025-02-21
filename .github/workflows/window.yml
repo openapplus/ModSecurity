@@ -17,11 +17,6 @@ jobs:
         configuration: [Release]
         configure:
           - {label: "full",       opt: "" }
-          - {label: "wo curl",    opt: "-DWITH_CURL=OFF" }
-          - {label: "wo lua",     opt: "-DWITH_LUA=OFF" }
-          - {label: "wo maxmind", opt: "-DWITH_MAXMIND=OFF" }
-          - {label: "wo libxml",  opt: "-DWITH_LIBXML2=OFF" }
-          - {label: "with lmdb",  opt: "-DWITH_LMDB=ON" }
     steps:
       - uses: actions/checkout@v4
         with:
@@ -62,7 +57,7 @@ jobs:
         run: |
           ctest -C ${{ matrix.configuration }} --output-on-failure
       - name: Upload Windows build artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with: 
           name: windows-build-artifact
           path: |
