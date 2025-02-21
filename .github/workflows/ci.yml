@@ -1,8 +1,10 @@
 name: Quality Assurance
 
 on:
+  workflow_dispatch:
   push:
-  pull_request:
+    branches:
+      - feature/v*
 
 jobs:
   build-linux:
