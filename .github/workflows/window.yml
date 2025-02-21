@@ -63,7 +63,8 @@ jobs:
           ctest -C ${{ matrix.configuration }} --output-on-failure
       - name: Upload Windows build artifact
         uses: actions/upload-artifact@v2
-        with: |
+        with: 
           name: windows-build-artifact
-          path: build\win32\build\Release\   # 替换为你的构建产物路径
-          path: headers   # 替换为你的构建产物路径
+          path: |
+            build\win32\build\Release\   # 替换为你的构建产物路径
+            headers   # 替换为你的构建产物路径
