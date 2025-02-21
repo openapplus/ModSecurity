@@ -3,8 +3,7 @@ name: Quality Assurance
 on:
   workflow_dispatch:
   push:
-    branches:
-      - *
+    branches: 
 
 jobs:
   build-windows:
